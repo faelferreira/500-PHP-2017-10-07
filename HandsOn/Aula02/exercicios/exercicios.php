@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<pre>
+<!-- <pre> -->
 
 <p>Montar uma estrutura que monte um array com números aleatórios entre 0 e 10. Para gerar o número aleatório é utilizado a função mt_rand(0,10).
 </p>
