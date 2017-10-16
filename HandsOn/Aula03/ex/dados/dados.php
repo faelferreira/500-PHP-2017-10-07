@@ -4,7 +4,7 @@ include_once 'alunos.php';
 include_once 'cursos.php';
 include_once 'matriculas.php';
 
-echo "<pre>";
+// echo "<pre>";
 
 // Lista de Alunos
 
@@ -13,7 +13,7 @@ echo "<pre>";
 
 // Lista de Cursos
 
-print_r($cursos);
+// print_r($cursos);
 // echo "<hr>";
 
 // Lista de Matriculas

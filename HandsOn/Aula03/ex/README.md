@@ -56,3 +56,6 @@ FOR para gerar matrículas aleatórias.
         [frequencia] => 10
 ]
 ```
+
+### dados.php
+Local onde dou `include` em todos arquivos para reunir tudo em apenas um local.
