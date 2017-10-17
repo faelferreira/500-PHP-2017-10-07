@@ -3,8 +3,10 @@
 include_once 'alunos.php';
 include_once 'cursos.php';
 include_once 'matriculas.php';
+include_once 'turmas.php';
+include_once 'periodos.php';
 
-// echo "<pre>";
+echo "<pre>";
 
 // Lista de Alunos
 
@@ -19,4 +21,14 @@ include_once 'matriculas.php';
 // Lista de Matriculas
 
 // print_r($matriculas);
+// echo "<hr>";
+
+// Lista de Turmas
+
+// print_r($turmas);
+// echo "<hr>";
+
+// Lista de Períodos
+
+// print_r($periodos);
 // echo "<hr>";
