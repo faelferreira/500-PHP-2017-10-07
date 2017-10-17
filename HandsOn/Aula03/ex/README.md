@@ -31,9 +31,9 @@ No final temos um FOR para colocar os Id's em cada.
 Um array com alguns cursos de exemplo.  
 Uma Função para gerar um Id aleatório de um dos Cursos.  
 
-    + É passado por parametro um número `1` ou `2`
-    + IF número == `1` - Cursos entre 500 e 503
-    + IF número == `2` - Cursos entre 600 e 602
+    - É passado por parametro um número `1` ou `2`
+    - IF número == `1` - Cursos entre 500 e 503
+    - IF número == `2` - Cursos entre 600 e 602
 
 #### $curso
 ```code
