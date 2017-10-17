@@ -1,7 +1,7 @@
 # Atividades para treinar Arrays, For, Foreach, Funções, etc.
 
-Neste projeto encontra-se alguns arquivos para simularmos um banco de dados e trabalharmos com ele.
-A ideia é que você monte funções para trabalhar com as informações geradas.
+Neste projeto encontra-se alguns arquivos para simularmos um banco de dados e trabalharmos com ele.  
+A ideia é que você monte funções para trabalhar com as informações geradas.  
 
 Estrutura de arquivos:
 
@@ -11,9 +11,9 @@ Estrutura de arquivos:
     - dados/dados.php;
     
 ### alunos.php
-JSON com 50 pessoas aleatórias geradas pelo site http://www.theonegenerator.com/pt
-Este JSON é transformado em um array para trabalharmos com ele no PHP.
-No final temos um FOR para colocar os Id's em cada.
+JSON com 50 pessoas aleatórias geradas pelo site http://www.theonegenerator.com/pt  
+Este JSON é transformado em um array para trabalharmos com ele no PHP.  
+No final temos um FOR para colocar os Id's em cada.  
 
 #### $aluno
 ```code
@@ -28,8 +28,8 @@ No final temos um FOR para colocar os Id's em cada.
 ]
 ```
 ### cursos.php
-Um array com alguns cursos de exemplo.
-Uma Função para gerar um Id aleatório de um dos Cursos.
+Um array com alguns cursos de exemplo.  
+Uma Função para gerar um Id aleatório de um dos Cursos.  
     - É passado por parametro um número `1` ou `2`
     - IF número == `1` - Cursos entre 500 e 503
     - IF número == `2` - Cursos entre 600 e 602
@@ -41,8 +41,8 @@ Uma Função para gerar um Id aleatório de um dos Cursos.
 ]
 ```
 ### matriculas.php
-Include do arquivo `cursos.php`
-FOR para gerar matrículas aleatórias.
+Include do arquivo `cursos.php`  
+FOR para gerar matrículas aleatórias.  
 #### $matricula
 ```code
 [
@@ -58,4 +58,4 @@ FOR para gerar matrículas aleatórias.
 ```
 
 ### dados.php
-Local onde dou `include` em todos arquivos para reunir tudo em apenas um local.
+Local onde dou `include` em todos arquivos para reunir tudo em apenas um local.  

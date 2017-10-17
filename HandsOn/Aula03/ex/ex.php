@@ -6,8 +6,8 @@ echo "<pre>";
 /*
  *	Função que busca por Id;
  *	Paramêtros 
- *  $array, local onde vai ser buscado a informação
- *  $id, O Id que está sendo buscando dentro do array
+ *	$array, local onde vai ser buscado a informação
+ *	$id, O Id que está sendo buscando dentro do array
 **/
 
 function buscaPorId($array,$id){
@@ -23,8 +23,8 @@ function buscaPorId($array,$id){
 /*
  *	Função que busca Matriculas por Id do Curso;
  *	Paramêtros 
- *  $matriculas, array com todas as matrículas
- *  $id, O Id do curso que estamos buscando
+ *	$matriculas, array com todas as matrículas
+ *	$id, O Id do curso que estamos buscando
 **/
 
 function buscaMatriculasCurso($matriculas,$curso_id){
@@ -41,9 +41,9 @@ $matriculas500 = buscaMatriculasCurso($matriculas,500);
 /*
  *	Foreach para pegarmos os alunos do curso 500
  *	Primeira Etapa -> Utilizamos a função buscaPorId para pegarmos os dados do aluno;
- *  é passado o array de alunos e o id do aluno através da matrícula
- *  Depois colocamos os dados do aluno e da matrícula dentro de um outro array
- *  $i é utilizado para iterarmos nosso array e assim não sobrescrevê-lo;
+ *	é passado o array de alunos e o id do aluno através da matrícula
+ *	Depois colocamos os dados do aluno e da matrícula dentro de um outro array
+ *	$i é utilizado para iterarmos nosso array e assim não sobrescrevê-lo;
 **/
 
 $i = 0;
@@ -59,8 +59,8 @@ foreach ($matriculas500 as $matricula) {
 /*
  *	Função que busca Matriculas Aprovadas por Id do Curso;
  *	Paramêtros 
- *  $matriculas, array com todas as matrículas
- *  $id, O Id do curso que estamos buscando
+ *	$matriculas, array com todas as matrículas
+ *	$id, O Id do curso que estamos buscando
 **/
 
 function buscaMatriculasAprovadasCurso($matriculas,$curso_id){
