@@ -17,7 +17,7 @@
 	<tbody> 
 	<?php foreach ($cursos as $curso): ?>
 		<tr> 
-			<th><?= $curso['id'];?></th> 
+			<td><?= $curso['id'];?></td> 
 			<td><?= $curso['nome'];?></td> 
 			<td><?= $curso['tipo'];?></td> 
 			<td><?= $curso['carga_horaria'];?></td> 
