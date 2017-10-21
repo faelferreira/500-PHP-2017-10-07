@@ -36,8 +36,9 @@ echo "<hr>";
 
 $numeros = gerarAleatorio(5);
 var_dump($numeros);
+
 $impares = array_filter($numeros, function($valor) {
-	if ($valor == 1) {
+	if ($valor % 2 == 1) {
 		return $valor;
 	}
 });

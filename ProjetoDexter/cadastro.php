@@ -24,70 +24,111 @@
 			<img src="img/banner-cadastro.jpg" alt="Banner Sobre">
 		</div>
 
+
+		<?php 
+
+		if ($_POST) {
+			
+			// var_dump($_POST);
+
+			$ok = true;
+			$invalidos = [];
+			if (!validaCampo($_POST['nome'])) {
+				$invalidos[] = 'Campo Nome é Obrigatório';
+				$ok = false;
+			}
+
+			if (!validaCampo($_POST['email'])) {
+				$invalidos[] = 'Campo Email é Obrigatório';
+				$ok = false;
+			}
+			
+
+			if (!$ok){
+				echo '<div class="alert alert-danger" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+				&times;
+				</button>';
+				foreach ($invalidos as $msg) {
+					echo $msg . '<br>';
+				}
+				echo '</div>';
+			} else {
+				echo '<div class="alert alert-success" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+				&times;
+				</button>
+				Enviado</div>';
+			}
+		}
+
+
+		 ?>		
+
 		<form action="#" method="post" class="form">
 			<p>
-				<label for="nome">Nome/Razao</label> <input type="text" name="nome"
-					id="nome_razao" required>
+				<label for="nome">Nome/Razao</label> <input type="text" value="<?= (isset($_POST['nome'])) ? $_POST['nome'] : ''; ?>" name="nome"
+					id="nome_razao">
 			</p>
 			<p>
-				<label for="email">Email</label> <input type="email" name="email"
-					id="email" required>
+				<label for="email">Email</label> <input type="email" value="<?= (isset($_POST['email'])) ? $_POST['email'] : ''; ?>" name="email"
+					id="email">
 			</p>
 			<p>
-				<label for="tel">Telefone</label> <input type="tel" name="telefone"
-					id="telefone" required>
+				<label for="tel">Telefone</label> <input type="tel" value="<?= (isset($_POST['telefone'])) ? $_POST['telefone'] : ''; ?>" name="telefone"
+					id="telefone" >
 			</p>
 			<p>
-				<label for="cel">Celular</label> <input type="tel" name="celular"
-					id="celular"  required>
+				<label for="cel">Celular</label> <input type="tel" value="<?= (isset($_POST['celular'])) ? $_POST['celular'] : ''; ?>" name="celular"
+					id="celular"  >
 			</p>
 			<p>
-				<label for="cep">Cep</label> <input type="tel" name="cep" id="tel"
-					 required>
+				<label for="cep">Cep</label> <input type="tel" value="<?= (isset($_POST['cep'])) ? $_POST['cep'] : ''; ?>" name="cep" id="tel"
+					 >
 			</p>
 			<p>
 				<label for="endereco">Endereço</label> <input type="tel"
-					name="telefone" id="bai" required>
+				 value="<?= (isset($_POST['telefone'])) ? $_POST['telefone'] : ''; ?>"	name="telefone" id="bai" >
 			</p>
 			<p>
-				<label for="bairro">Bairro</label> <input type="tel" name="bairro"
-					id="tel" required>
+				<label for="bairro">Bairro</label> <input type="tel" value="<?= (isset($_POST['bairro'])) ? $_POST['bairro'] : ''; ?>" name="bairro"
+					id="tel" >
 			</p>
 			<p>
-				<label for="cidade">Cidade</label> <input type="tel" name="cidade"
-					id="cidade" required>
+				<label for="cidade">Cidade</label> <input type="tel" value="<?= (isset($_POST['cidade'])) ? $_POST['cidade'] : ''; ?>" name="cidade"
+					id="cidade" >
 			</p>
 			<p>
 				<label for="Estado">Estado</label>
 				 <select name="estado" id="estado">
-					<option value="">Selecione</option>
-					<option value="AC">AC</option>
-					<option value="AL">AL</option>
-					<option value="AP">AP</option>
-					<option value="AM">AM</option>
-					<option value="BA">BA</option>
-					<option value="CE">CE</option>
-					<option value="DF">DF</option>
-					<option value="ES">ES</option>
-					<option value="GO">GO</option>
-					<option value="MA">MA</option>
-					<option value="MT">MT</option>
-					<option value="MS">MS</option>
-					<option value="MG">MG</option>
-					<option value="PA">PA</option>
-					<option value="PB">PB</option>
-					<option value="PR">PR</option>
-					<option value="PE">PE</option>
-					<option value="PI">PI</option>
-					<option value="RJ">RJ</option>
-					<option value="RN">RN</option>
-					<option value="RS">RS</option>
-					<option value="RO">RO</option>
-					<option value="RR">RR</option>
-					<option value="SC">SC</option>
-					<option value="SP">SP</option>
-					<option value="SE">SE</option>
-					<option value="TO">TO</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == '')? 'selected' : ''; ?> value="">Selecione</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'AC')? 'selected' : ''; ?> value="AC">AC</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'AL')? 'selected' : ''; ?> value="AL">AL</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'AP')? 'selected' : ''; ?> value="AP">AP</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'AM')? 'selected' : ''; ?> value="AM">AM</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'BA')? 'selected' : ''; ?> value="BA">BA</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'CE')? 'selected' : ''; ?> value="CE">CE</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'DF')? 'selected' : ''; ?> value="DF">DF</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'ES')? 'selected' : ''; ?> value="ES">ES</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'GO')? 'selected' : ''; ?> value="GO">GO</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'MA')? 'selected' : ''; ?> value="MA">MA</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'MT')? 'selected' : ''; ?> value="MT">MT</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'MS')? 'selected' : ''; ?> value="MS">MS</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'MG')? 'selected' : ''; ?> value="MG">MG</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'PA')? 'selected' : ''; ?> value="PA">PA</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'PB')? 'selected' : ''; ?> value="PB">PB</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'PR')? 'selected' : ''; ?> value="PR">PR</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'PE')? 'selected' : ''; ?> value="PE">PE</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'PI')? 'selected' : ''; ?> value="PI">PI</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'RJ')? 'selected' : ''; ?> value="RJ">RJ</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'RN')? 'selected' : ''; ?> value="RN">RN</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'RS')? 'selected' : ''; ?> value="RS">RS</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'RO')? 'selected' : ''; ?> value="RO">RO</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'RR')? 'selected' : ''; ?> value="RR">RR</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'SC')? 'selected' : ''; ?> value="SC">SC</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'SP')? 'selected' : ''; ?> value="SP">SP</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'SE')? 'selected' : ''; ?> value="SE">SE</option>
+					<option <?= (isset($_POST['estado']) && $_POST['estado'] == 'TO')? 'selected' : ''; ?> value="TO">TO</option>
 				</select>
 			</p>
 			<p>
