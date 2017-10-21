@@ -18,15 +18,21 @@
 		return true;
 	}
 
+	function validaCampos($dados){
 
-	// if(isset($_POST['nome'])){
-	// 	echo $_POST['nome'];
-	// } else {
-	// 	echo '';
-	// }
+		$erros = [];
+		foreach ($dados as $chave => $valor) {
+			if ($valor == '') {
+				$erros[] = $chave; 
+			}
+		}
 
-	// echo (isset($POST['nome'])) ? $_POST['nome'] : '';
+		return $erros;
+	}
 
+	function exibeCampo($campo){
+		return (isset($campo)) ? $campo : ''; 
+	}
 
 
 

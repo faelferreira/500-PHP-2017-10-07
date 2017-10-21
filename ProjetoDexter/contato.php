@@ -23,22 +23,63 @@
 
             <iframe class="map" width="940" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.br/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;geocode=&amp;q=4Linux+-+Rua+Vergueiro,+Vila+Mariana,+S%C3%A3o+Paulo&amp;aq=0&amp;oq=4linux+rua&amp;sll=-23.65333,-46.595764&amp;sspn=0.906957,1.454315&amp;ie=UTF8&amp;hq=4Linux+-&amp;hnear=Rua+Vergueiro,+S%C3%A3o+Paulo&amp;t=m&amp;ll=-23.587469,-46.633487&amp;spn=0.013765,0.04034&amp;z=15&amp;output=embed"></iframe>
 
+            <?php
+
+            $ok = 'true';
+
+
+        if ($_POST) {
+           
+           $camposInvalidos = validaCampos($_POST);
+
+           if (count($camposInvalidos) > 0) {
+               $ok = false;
+           } else {
+            $ok = true;
+           }
+
+        }
+        ?>
+
+        <?php if ($ok === true) :  ?>
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                &times;
+            </button>
+            Enviado
+        </div> 
+
+        <?php endif; ?>
+        <?php if ($ok === false) :  ?>
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                &times;
+            </button>
+            <ul>
+                <?php foreach ($camposInvalidos as $campo) :?>
+                    <li><?= $campo  ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div> 
+
+        <?php endif; ?>
+
             <form action="#" method="post" class="form">
                 <p>
                     <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome" placeholder="Nome" required>
+                    <input type="text" value="<?= (isset($_POST['nome'])) ? $_POST['nome'] : ''; ?>" name="nome" id="nome" placeholder="Nome" >
                 </p>
                 <p>
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="seu@email.com" required>
+                    <input type="email" value="<?= (isset($_POST['email'])) ? $_POST['email'] : ''; ?>" name="email" id="email" placeholder="seu@email.com" >
                 </p>
                 <p>
                     <label for="tel">Telefone</label>
-                    <input type="tel" name="tel" id="tel" pattern="[0-9]{8}" placeholder="(xx) 1234-5678" required>
+                    <input type="tel" value="<?= (isset($_POST['tel'])) ? $_POST['tel'] : ''; ?>" name="tel" id="tel"  placeholder="(xx) 1234-5678" >
                 </p>
                 <p>
                     <label for="msg">Mensagem</label>
-                    <textarea name="msg" id="msg" rows="5" placeholder="Sua mensagem..." required></textarea>
+                    <textarea name="msg" id="msg" rows="5" placeholder="Sua mensagem..." ><?= (isset($_POST['msg'])) ? $_POST['msg'] : ''; ?></textarea>
                 </p>
                 <p>
                     <button class="btn">Enviar</button>
